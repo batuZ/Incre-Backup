@@ -99,7 +99,7 @@ class Backuper
 		sub_path = path.gsub(root,'')
 		last_back_file = File.join(@current_sub_dir, sub_path)
 		change_back_file = File.join(@change_time_sub_dir, sub_path)
-		if !is_same?(path, last_back_file) && !is_exclude?(sub_path)
+		if !is_same?(path, last_back_file) #&& !is_exclude?(sub_path)
 			FileUtils.mkdir_p(File.dirname(last_back_file), :mode => 0777)
 			FileUtils.cp(path, last_back_file)
 			FileUtils.mkdir_p(File.dirname(change_back_file), :mode => 0777)
