@@ -54,6 +54,7 @@ class Backuper:
             for i in range(len(opt['source_folders'])):
                 if self.opt['backup_root'] in cpath(opt['source_folders'][i]):
                     opt['source_folders'][i] = self.opt['backup_root']
+            self.opt['source_folders'].append(self.opt['backup_root'])
             self.opt['source_folders'] = list(set(opt['source_folders']))
             self.opt['source_folders'].remove(self.opt['backup_root'])
         else:
