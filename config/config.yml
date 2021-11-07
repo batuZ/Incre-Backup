@@ -1,27 +1,14 @@
 # 间隔秒数，最少60秒
-# ex: 
-#   interval: 60 | 2.minutes | 3.hours | 4.days ...
-# see: https://github.com/javan/whenever
-interval: 
+interval: 60
 
 # 源文件夹
-# ex: 
-#   source_folders: 
-#     - /User/username/work
-#     - /User/username/project
-#     - /User/username/database
 source_folders: 
-
+  - D:\testdata
+  
 # 备份根目录
-# ex:
-#   source_folders: /User/username/backup  
-backup_root: 
-
+backup_root:  D:\BKUP
+ 
 # 排除项
-# ex: 
-#   excludes: 
-#     - 'logger.log'
-#     - '*.tmp'
-#     - 'test/*'
-#     - '*/.DS_Store'
 excludes:
+  - '*/shp2/*'
+  - '*.json'

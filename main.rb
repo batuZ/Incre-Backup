@@ -23,7 +23,7 @@ class Backuper
     end
 
     def start
-		@backup_root = File.expand_path(@opt['backup_root']||'.')
+		@backup_root = File.expand_path(@opt['backup_root']||'./backup_root')
     	@change_time_dir = File.expand_path(File.join(@backup_root , Time.now.strftime("%Y%m%d-%H%M%S")))
     	@current_dir = File.expand_path(File.join(@backup_root , 'current'))
     	@tags = @opt['source_folders']||[]
@@ -96,10 +96,10 @@ class Backuper
    	end
 
 	def check_file path, root
-		sub_path = path.gsub(root,'')
+		sub_path = path.gsub(File.expand_path(root),'')
 		last_back_file = File.join(@current_sub_dir, sub_path)
 		change_back_file = File.join(@change_time_sub_dir, sub_path)
-		if !is_same?(path, last_back_file) #&& !is_exclude?(sub_path)
+		if !is_same?(path, last_back_file) && !is_exclude?(sub_path)
 			FileUtils.mkdir_p(File.dirname(last_back_file), :mode => 0777)
 			FileUtils.cp(path, last_back_file)
 			FileUtils.mkdir_p(File.dirname(change_back_file), :mode => 0777)
@@ -108,7 +108,7 @@ class Backuper
 	end
 
 	def is_exclude? str
-		(@opt['excludes']||[]).any?{|exc| !!(str =~ %r`^#{exc}`)}
+		(@opt['excludes']||[]).any?{|exc| File.fnmatch(exc, str)}
 	end
 
 	def md5 path

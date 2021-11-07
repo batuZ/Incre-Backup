@@ -10,7 +10,7 @@
 	
 * 需要ruby2.5或更高版本
 * 进入目录运行 `bundle install`
-
+* python 3.7
 
 ### 配置文件：.config/config.yml
 	
@@ -49,10 +49,9 @@
 
 ### 注意!
 
-- 仅在mac环境下完成测试，linux理论可行
+- 在mac环境下完成ruby测试，windows上完成python测试
 - 启动时`whenever`gem会申请用户权限
-- 在windows上可以手动创建计划任务，执行角本：`ruby x:\path\to\main.rb`，理论可行
-- 排除项`excludes`为正则实现，不可套用其它规则
+- 在windows上可以手动创建计划任务，执行角本：`ruby main.rb` 或 `ypthon main.py`
 - 未进行网络备份测试
 
 
