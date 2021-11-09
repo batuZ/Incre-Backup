@@ -1,10 +1,12 @@
+import fnmatch
 import os
 import shutil
+import sys
 import time
-import yaml
-import fnmatch
 from hashlib import md5
 from shutil import copyfile
+
+import yaml
 from psutil import Process
 
 
@@ -130,9 +132,9 @@ class Backuper:
 
 
 if __name__ == '__main__':
-
     config_path = './config/config.yml'
     pid_path = './pid'
+    os.chdir(sys.path[0])
 
     # 处理一下重复执行问题
     if os.path.exists(pid_path):

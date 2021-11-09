@@ -3,3 +3,5 @@ log
 pid
 Gemfile.lock
 .byebug_history
+.idea
+**/__pycache__/*
