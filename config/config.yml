@@ -3,12 +3,26 @@ interval: 60
 
 # 源文件夹
 source_folders: 
-  - D:\testdata
-  
+  - D:\work\cesiumlab\ori
+  - D:\work\Incre-Backup
+  - D:\work\py_desktop
+  - D:\work\CIMToolBox
+
 # 备份根目录
-backup_root:  D:\BKUP
+backup_root:  C:\BACKUP
  
 # 排除项
 excludes:
-  - '*/shp2/*'
-  - '*.json'
+  - '*/.git/*'
+  - '*/.vs/*'
+  - '*/.idea/*'
+  - '*/__pycache__/*'
+  - '*/Debug/*'
+  - '*/Release/*'
+  - '*/ori/3rd/*'
+  - '*/ori/3rdsrc/*'
+  - '*.zip'
+  - '*.rar'
+  - '*/pid'
+  - '*/CIMToolBox/cpp_for_py/*'
+  - '*/CIMToolBox/libs/*'

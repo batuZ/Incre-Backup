@@ -71,7 +71,7 @@ class Backuper:
         self.is_first_back_up = os.path.exists(current_dir)
         tags = self.opt['source_folders']
         for sDir in tags:
-            if os.path.isdir(sDir):
+            if sDir and os.path.isdir(sDir):
                 self.change_time_sub_dir = join_path(
                     change_time_dir, os.path.basename(sDir))
                 self.current_sub_dir = join_path(
