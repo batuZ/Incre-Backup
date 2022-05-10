@@ -7,7 +7,11 @@ source_folders:
   - D:\work\Incre-Backup
   - D:\work\py_desktop
   - D:\work\CIMToolBox
-
+  - D:\work\BTUtils
+  - D:\work\CIMelperModelTools
+  - D:\work\cimelper
+  - D:\work\electron-fragment
+  
 # 备份根目录
 backup_root:  C:\BACKUP
  
@@ -26,3 +30,8 @@ excludes:
   - '*/pid'
   - '*/CIMToolBox/cpp_for_py/*'
   - '*/CIMToolBox/libs/*'
+  - '*/x64/*'
+  - '*/bin/*'
+  - '*/obj/*'
+  - '*/packages/*'
+  - '*/node_modules/*'
